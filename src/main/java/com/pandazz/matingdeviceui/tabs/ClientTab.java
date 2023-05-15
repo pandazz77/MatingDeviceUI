@@ -12,13 +12,15 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
-public class ClientTab {
+public class ClientTab extends Thread{
+    private final int available_cd = 1000; // time in ms to update incicator
+    private int newdata_counter = 0; // increases when new data incoming, used in indicator updater
     public VBox vbox_content;
     private Text client_name;
     private Text address;
     private Tab tab;
     private GridPane data_grid = new GridPane();
-    private TextField data_values[];
+    private TextField[] data_values;
     private Circle indicator = new Circle(7, Paint.valueOf("red"));
     public ClientTab(TabPane tab_pane, String tab_name ,String client_name, String address, String data_promts[]) {
         this.data_values = new TextField[data_promts.length];
@@ -70,14 +72,38 @@ public class ClientTab {
 
         this.tab.setContent(vbox_content);
         tab_pane.getTabs().add(tab);
+        this.start();
+    }
+
+    // start thread
+    public void run(){
+        int newdata_counter_copy = 0;
+        while(true){
+            try{
+                if(this.newdata_counter==newdata_counter_copy){
+                    this.set_indicator(false);
+                } else {
+                    this.set_indicator(true);
+                }
+                newdata_counter_copy = this.newdata_counter;
+                Thread.sleep(this.available_cd);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
     public void set_value(int index,String value){
         this.data_values[index].setText(value);
+        this.newdata_counter++;
     }
 
     public void set_indicator(boolean status){
         if(status) this.indicator.setFill(Paint.valueOf("#56f260")); // green
         else this.indicator.setFill(Paint.valueOf("red"));
+    }
+
+    private void update_available(){
+
     }
 
 }
