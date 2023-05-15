@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pandazz.matingdeviceui.MainController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="800.0" spacing="10.0">
+         <children>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="508.0" prefWidth="800.0">
+               <children>
+                  <HBox prefHeight="508.0" prefWidth="800.0" spacing="5.0">
+                     <children>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="508.0" prefWidth="412.0">
+                           <children>
+                              <TabPane fx:id="tabpane" prefHeight="506.0" prefWidth="411.0" tabClosingPolicy="UNAVAILABLE" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="508.0" prefWidth="377.0">
+                           <children>
+                              <VBox prefHeight="508.0" prefWidth="377.0" spacing="5.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Message history" wrappingWidth="178.13671875">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                    <Pane fx:id="messsage_history_pane" prefHeight="462.0" prefWidth="357.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="83.0" prefWidth="804.0" style="-fx-border-color: black;">
+               <children>
+                  <Text fx:id="date_and_time" layoutX="592.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE_AND_TIME">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
