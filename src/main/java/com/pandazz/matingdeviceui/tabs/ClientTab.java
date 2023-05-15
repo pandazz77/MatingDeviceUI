@@ -102,8 +102,4 @@ public class ClientTab extends Thread{
         else this.indicator.setFill(Paint.valueOf("red"));
     }
 
-    private void update_available(){
-
-    }
-
 }

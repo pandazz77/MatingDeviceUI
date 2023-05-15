@@ -7,7 +7,6 @@ import com.pandazz.matingdeviceui.scenes.FrequencyScene;
 import com.pandazz.matingdeviceui.scenes.RsClientsScene;
 import com.pandazz.matingdeviceui.scenes.UdpClientsScene;
 import javafx.application.Platform;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -15,8 +14,6 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Client extends Thread{
     private final DatagramSocket socket;

@@ -5,7 +5,6 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
-import com.pandazz.matingdeviceui.scenes.UdpClientsScene;
 import com.pandazz.matingdeviceui.socket.Client;
 import com.pandazz.matingdeviceui.tabs.ClientTab;
 import com.pandazz.matingdeviceui.tabs.ControllerTab;
@@ -15,7 +14,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 public class MainController {
     @FXML
@@ -45,8 +43,6 @@ public class MainController {
         this.message_history = new MessageHistory(this.messsage_history_pane);
         DateTime date_time_thread = new DateTime(date_and_time);
         date_time_thread.start();
-        //UdpClientsScene udpClientsScene = new UdpClientsScene();
-        //udpClientsScene.show();
 
     }
 
