@@ -74,7 +74,7 @@ public class Client extends Thread{
                     });
 
                     break;
-                case("protokol_message"):
+                case("protocol_message"):
                     client_name = (String) jo.get("client_name");
                     message = (String) jo.get("message");
                     client_address = (String) jo.get("client_address");
